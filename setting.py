@@ -1,15 +1,17 @@
 import csv
 import json
+import os
 
 ############ You should set this ################
-url = ""                # url that you want to send request (e.g. somesites.com/graphql)
+url = ""                # url that you want to send request (e.g. https://somesites.com/graphql))
 depth = 5               # depth that you want
 #################################################
 
 ############ You can change this ################
-path = '.\\'
-wordlist_PATH = ".\\wordlist\\1000_word.csv"
-output_PATH = ".\\output\\output.json"
+absFilePath = os.path.abspath(__file__)
+path = os.path.split(absFilePath)[0]
+wordlist_PATH = path + "\\wordlist\\1000_word.csv"
+output_PATH = path + "\\output\\output.json"
 headers = { "content-type": "application/json", 'user-agent' : ''}
 #################################################
 
@@ -18,7 +20,7 @@ alpha = ['e', 's', 'i', 'a', 'r', 'n', 't' ,'o'] # frequently used alphabet. You
 hop = 10000             # number that you send at once
 max_length = 10         # max
 length = 5              # user choice
-wordlist_FOLDER = ".\\wordlist\\"
+wordlist_FOLDER = path + "\\wordlist\\"
 #################################################
 
 def csv2list(filename, delimiter=','):
