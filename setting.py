@@ -2,7 +2,7 @@ import csv
 import json
 
 ############ You should set this ################
-url = ""                # url that you want to send request
+url = ""                # url that you want to send request (e.g. somesites.com/graphql)
 depth = 5               # depth that you want
 #################################################
 
